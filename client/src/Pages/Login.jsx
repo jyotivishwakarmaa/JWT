@@ -2,12 +2,13 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 import Form from "react-bootstrap/Form";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
   const[email, setEmail]=useState('')
   const[password, setPassword] = useState('')
-    
+    const navigate = useNavigate()
 
   const handleSubmit = async(e)=>{
     e.preventDefault();
@@ -20,6 +21,8 @@ const Login = () => {
         console.log(response.data);
 
         localStorage.setItem('token',response.data.Token)
+        navigate('/dashboard')
+
     }   catch (error) {
         console.log(error);
       

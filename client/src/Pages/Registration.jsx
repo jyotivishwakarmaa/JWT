@@ -27,6 +27,7 @@ const Registration = () => {
       try {
         const response = await axios.post(api,inp);
         console.log(response);
+        
         navigate('/')
 
       } catch (error) {

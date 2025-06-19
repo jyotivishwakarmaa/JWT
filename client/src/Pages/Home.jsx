@@ -8,6 +8,7 @@ const userAuthentication=async()=>{
     const token = localStorage.getItem('token');
 
     if(token){
+      // Navigate(/)
      
         let api = "http://localhost:8000/user/authentication";
         const response= await axios.post(api, null, {headers:{'token':token}})
